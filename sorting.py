@@ -51,23 +51,28 @@ def _merge(left, right):
     return result
 
 
-if __name__ == "__main__":
-
+#Testing the algorithms...
+def test():
     test_cases = [
         [],
         [1],
         [5, 3, 8, 1, 9, 2],
-        [1, 2, 3, 4, 5],         
-        [5, 4, 3, 2, 1],        
-        [4, 2, 4, 1, 4, 2],       
+        [1, 2, 3, 4, 5],
+        [5, 4, 3, 2, 1],
+        [4, 2, 4, 1, 4, 2],
     ]
 
     for case in test_cases:
         insertion_result = insertion_sort(case.copy())
         merge_result = merge_sort(case.copy())
-        expected = sorted(case)  
+        expected = sorted(case)
 
         print("input:   ", case)
         print("insertion:", insertion_result, "OK" if insertion_result == expected else "WRONG")
         print("merge:    ", merge_result, "OK" if merge_result == expected else "WRONG")
         print("-" * 40)
+
+
+if __name__ == "__main__":
+    test()
+
